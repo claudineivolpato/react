@@ -2,4 +2,10 @@
 
 https://pt-br.reactjs.org/docs/create-a-new-react-app.html
 
-xxx
+
+
+$ npx create-react-app my-app   // para criar app react
+$ cd my-app
+$ npm start
+
+

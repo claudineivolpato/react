@@ -22,7 +22,6 @@ function Opa(props) {
   return <div>
     <BoasVindas name={props.name}></BoasVindas>
     <BoasVindas name={props.name}></BoasVindas>
-    <BoasVindas name={props.name}></BoasVindas>
   </div>
 }
 

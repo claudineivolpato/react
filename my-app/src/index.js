@@ -7,12 +7,15 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function Ola(props){
-  return <h1>Ola, {props.nome}</h1>
+  return <h1>Ola, {props.nome} {props.sobrenome}</h1>
 }
 
-const element = Ola
+const element = <ola nome="Claudinei" sobrenome="Volpato"></ola>
 
-root.render(element, document.getElementById('root'));
+root.render(
+  element,
+  document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -16,3 +16,5 @@ https://github.com/valdairelaborata/12760/blob/lab_01/my-app/src/index.js
 ######################  07/07 ############################
 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes
+https://pt-br.reactjs.org/docs/thinking-in-react.html
+

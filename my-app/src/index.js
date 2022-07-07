@@ -24,7 +24,6 @@ function Opa(props) {
     <BoasVindas name={props.name}></BoasVindas>
     <BoasVindas name={props.name}></BoasVindas>
   </div>
-
 }
 
 root.render(

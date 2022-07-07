@@ -10,7 +10,7 @@ function Ola(props){
   return <h1>Ola, {props.nome} {props.sobrenome}</h1>
 }
 
-const element = <ola nome="Claudinei" sobrenome="Volpato"></ola>
+const element = <Ola nome="Claudinei" sobrenome="Volpato"></Ola>
 
 root.render(
   element,

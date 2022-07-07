@@ -1,7 +1,7 @@
 ######################  06/07 ############################
 
 https://pt-br.reactjs.org/docs/create-a-new-react-app.html
-
+https://pt-br.reactjs.org/docs/components-and-props.html
 
 
 $ npx create-react-app my-app   // para criar app react
@@ -10,5 +10,9 @@ $ npm start
 
 sempre fazer o $ npm start para subir o servidor 
 
-
 https://github.com/valdairelaborata/12760/blob/lab_01/my-app/src/index.js
+
+
+######################  07/07 ############################
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes

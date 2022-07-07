@@ -6,17 +6,32 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function Ola(props){
-  return <h1>Ola, {props.nome} {props.sobrenome}</h1>
+class Chegada extends React.Component {
+  render() {
+    return <h1>Opa, {this.props.name}</h1>
+  }
 }
 
+class BoasVindas extends React.Component {
+  render() {
+    return <Chegada name={this.props.name}></Chegada>
+  }
+}
 
+function Opa(props) {
+  return <div>
+    <BoasVindas name={props.name}></BoasVindas>
+    <BoasVindas name={props.name}></BoasVindas>
+    <BoasVindas name={props.name}></BoasVindas>
+  </div>
 
-const element = <Ola nome="Claudinei" sobrenome="Volpato"></Ola>
+}
 
 root.render(
-  element,
-  document.getElementById('root')
+  <div>
+    <Opa name='Pesoa 01'></Opa>
+    <Opa name='Pesoa 04'></Opa>
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function

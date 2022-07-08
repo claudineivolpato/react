@@ -13,31 +13,33 @@ class Relogio extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = this.setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
+
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.timerID)
   }
 
   tick() {
-    this.setState({ date: new Date() });
+    // Busco na api
+    this.setState({ date: new Date() })
+    console.log(this.state.date)
   }
 
   render() {
-    return
-    <div>
-      <h1>Opa do componete do relogio</h1>
-      <h2>Hora agora: {this.state.date.toLocaleDateString()} </h2>
-    </div>
+    return (
+      <div>
+        <h1>Opa!!!</h1>
+        <h2>Hora agora: {this.state.date.toLocaleTimeString()}</h2>
+      </div>
+    );
   }
 }
 
 root.render(
-  <div>
-    <Relogio></Relogio>
-  </div>
-);
+  <Relogio />
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

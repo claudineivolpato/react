@@ -6,42 +6,31 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class Pesquisa extends React.Component {
+class Cadastros extends React.Component {
   render() {
-    return <h1>Componente de pesquisa</h1>
+    return <h1>Lista de Cadastros</h1>
   }
 }
 
-class ListaProdutos extends React.Component {
+class Basicos extends React.Component {
   render() {
     return <div>
-      <h2>Lista de Resultados</h2>
-      <Categoria></Categoria>
-      <Itens></Itens>
-      <Itens></Itens>
-      <Itens></Itens>
-      <Categoria></Categoria>
-      <Itens></Itens>
+      <h2>Dados Basicos</h2>
+      
     </div>
   }
 }
 
-class Categoria extends React.Component {
+class Cadsatros extends React.Component {
   render() {
-    return <h3>Categoria</h3>
-  }
-}
-
-class Itens extends React.Component {
-  render() {
-    return <h4>Item</h4>
+    return <h3>Item</h3>
   }
 }
 
 root.render(
   <div>
-    <Pesquisa></Pesquisa>
-    <ListaProdutos></ListaProdutos>
+    <Cadastros></Cadastros>
+    <Basicos></Basicos>
   </div>
 );
 

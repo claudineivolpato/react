@@ -22,8 +22,6 @@ class ListaProdutos extends React.Component {
       <Itens></Itens>
       <Categoria></Categoria>
       <Itens></Itens>
-      <Itens></Itens>
-      <Itens></Itens>
     </div>
   }
 }

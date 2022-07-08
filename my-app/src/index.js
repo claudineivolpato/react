@@ -6,43 +6,37 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class DadosBasicos extends React.Component {
-  render() {
-    return <div>
-      <p>Nome:</p>
-      <p>Sobrenome:</p>
-      <p>Idade:</p>
-    </div>
+class Relogio extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
   }
-}
 
-class Endereco extends React.Component {
-  render() {
-    return <div>
-      <h2>{this.props.tipo}</h2>
-      <p>Logradouro:</p>
-      <p>cep:</p>
-    </div>
+  componentDidMount() {
+    this.timerID = this.setInterval(() => this.tick(), 1000);
   }
-}
 
-class AreaAtuacao extends React.Component {
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({ date: new Date() });
+  }
+
   render() {
-    return <div>
-      <h2>{this.props.title}</h2>
-      <p>{this.props.description}</p>
+    return (
+    <div>
+      <h1>Opa do componete do relogio</h1>
+      <h2>Hora agora: {this.state.date.toLocaleDateString()}</h2>
     </div>
+    );
   }
 }
 
 root.render(
   <div>
-    <DadosBasicos></DadosBasicos>
-    <Endereco tipo='Residencial'></Endereco>
-    <Endereco tipo='Comercial'></Endereco>
-    <AreaAtuacao title='Gerente Comercial' description='Descrição 001' ></AreaAtuacao>
-    <AreaAtuacao title='Xpto 001' description='Descrição 002' ></AreaAtuacao>
-    <AreaAtuacao title='Teste' description='Descrição 003' ></AreaAtuacao>
+    <Relogio></Relogio>
   </div>
 );
 

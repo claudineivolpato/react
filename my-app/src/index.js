@@ -25,12 +25,11 @@ class Relogio extends React.Component {
   }
 
   render() {
-    return (
+    return
     <div>
       <h1>Opa do componete do relogio</h1>
-      <h2>Hora agora: {this.state.date.toLocaleDateString()}</h2>
+      <h2>Hora agora: {this.state.date.toLocaleDateString()} </h2>
     </div>
-    );
   }
 }
 

@@ -11,6 +11,7 @@ class Lista extends React.Component {
     super(props)
     this.state = {
       dados: [{
+        "id": 1,
         "cep": "20260-080",
         "logradouro": "xpto",
         "complemento": "até 392/393",
@@ -18,13 +19,15 @@ class Lista extends React.Component {
         "localidade": "Curitiba",
         "uf": "RJ"
       }, {
+        "id": 2,
         "cep": "20260-080",
         "logradouro": "xpto 01",
         "complemento": "até 392/393",
         "bairro": "jk",
         "localidade": "Curitiba",
         "uf": "RJ"
-      }, , {
+      }, {
+        "id": 3,
         "cep": "20260-080",
         "logradouro": "xpto 02",
         "complemento": "até 392/393",
@@ -40,7 +43,7 @@ class Lista extends React.Component {
       <div>
         <h2>Opa</h2>
         <ul>
-          {this.state.dados.map((endereco) => <li>{endereco.logradouro}</li>)}
+          {this.state.dados.map((endereco) => <li key={endereco.id}>{endereco.logradouro}</li>)}
         </ul>
       </div>
     )

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ListaService from './services/ListaService';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -10,40 +11,22 @@ class Lista extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      dados: [{
-        "id": 1,
-        "cep": "20260-080",
-        "logradouro": "xpto",
-        "complemento": "até 392/393",
-        "bairro": "abc",
-        "localidade": "Curitiba",
-        "uf": "RJ"
-      }, {
-        "id": 2,
-        "cep": "20260-080",
-        "logradouro": "xpto 01",
-        "complemento": "até 392/393",
-        "bairro": "jk",
-        "localidade": "Curitiba",
-        "uf": "RJ"
-      }, {
-        "id": 3,
-        "cep": "20260-080",
-        "logradouro": "xpto 02",
-        "complemento": "até 392/393",
-        "bairro": "jk",
-        "localidade": "Curitiba",
-        "uf": "RJ"
-      }]
+      lista: []
     }
+  }
+
+  componentDidMount() {   // executa antes de renderizar
+    ListaService.getLista().then((res) => {
+      this.setState({lista: res.data});
+    })
   }
 
   render() {
     return (
       <div>
-        <h2>Opa</h2>
+        <h2>Lista de Contatos</h2>
         <ul>
-          {this.state.dados.map((endereco) => <li key={endereco.id}>{endereco.logradouro}</li>)}
+          {this.state.lista.map((contato) => <li key={contato.codigo}>{contato.codigo} - {contato.nome} - {contato.telefone}</li>)}
         </ul>
       </div>
     )

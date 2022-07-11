@@ -22,3 +22,10 @@ https://pt-br.reactjs.org/docs/thinking-in-react.html
 ######################  08/07 ############################
 
 https://pt-br.reactjs.org/docs/state-and-lifecycle.html
+
+
+######################  11/07 ############################
+
+consumo de APi. . .....AXIOS
+https://www.npmjs.com/package/axios
+

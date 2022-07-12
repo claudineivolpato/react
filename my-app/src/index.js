@@ -15,7 +15,7 @@ class Opa extends React.Component {
     console.log(this.state);
   }
 
-  componentDidMount() {   // executa antes de renderizar
+  componentDidMount() {  // executa antes de renderizar
     console.log(this.state.ativo);
   }
 

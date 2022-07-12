@@ -19,3 +19,11 @@ h2 {
 #btnTeste{
   background-color: brown;
 }
+
+.ativo {
+  background-color: crimson;
+}
+
+.inativo {
+  background-color: aqua;
+}

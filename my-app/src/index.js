@@ -8,35 +8,37 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class Lista extends React.Component {
+class Opa extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      lista: []
-    }
+    this.state = { ativo: false }
+    console.log(this.state);
   }
 
   componentDidMount() {   // executa antes de renderizar
-    ListaService.getLista().then((res) => {
-      this.setState({lista: res.data});
-    })
+    console.log(this.state.ativo);
   }
 
   render() {
+
+    let className="h1";
+    if(this.state.ativo == true){
+      className += " ativo"
+    } else {
+      className += " inativo"
+    }
+
     return (
       <div>
-        <h2>Lista de Contatos</h2>
+        <h1 className={className}>Opaaaa</h1>
         <button className="btn btn-primary" id='btnTeste'>Teste</button>
-        <ul>
-          {this.state.lista.map((contato) => <li key={contato.codigo}>{contato.codigo} - {contato.nome} - {contato.telefone}</li>)}
-        </ul>
       </div>
     )
   }
 }
 
 root.render(
-  <Lista />
+  <Opa />
 )
 
 // If you want to start measuring performance in your app, pass a function

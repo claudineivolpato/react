@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ListaService from './services/ListaService';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -25,6 +26,7 @@ class Lista extends React.Component {
     return (
       <div>
         <h2>Lista de Contatos</h2>
+        <button className="btn btn-primary" id='btnTeste'>Teste</button>
         <ul>
           {this.state.lista.map((contato) => <li key={contato.codigo}>{contato.codigo} - {contato.nome} - {contato.telefone}</li>)}
         </ul>

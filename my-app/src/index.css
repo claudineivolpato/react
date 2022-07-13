@@ -11,19 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-h2 {
-  color: blue;
-}
-
-#btnTeste{
-  background-color: brown;
-}
-
-.ativo {
-  background-color: crimson;
-}
-
-.inativo {
-  background-color: aqua;
-}

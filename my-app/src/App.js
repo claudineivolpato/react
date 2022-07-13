@@ -12,8 +12,8 @@ function App() {
         <HeaderComponent />
         <div className='container'>
           <Switch>
-            <ListContactComponent />
-            <CreateContactComponent />
+            <Route path="/" exact component={ListContactComponent}></Route>
+            <Route path="/contact" component={CreateContactComponent}></Route>
           </Switch>
         </div>
         <FooterComponent />

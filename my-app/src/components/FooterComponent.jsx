@@ -9,7 +9,7 @@ class FooterComponent extends Component {
         return(
             <div>
                 <footer className="footer">
-                    <span className="text-muted">Final da pagina</span>
+                    <span className="text-muted">Rodapé da pagina</span>
                 </footer>
             </div>
         )

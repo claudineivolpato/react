@@ -2,10 +2,10 @@ import axios from 'axios'
 
 const BASE_URL = "https://appelaborata.herokuapp.com/cont"
 
-class ListaService {
-    getLista() {
+class ContactService {
+    getContacts() {
         return axios.get(BASE_URL);
     }
 }
 
-export default new ListaService()
+export default new ContactService()

@@ -14,5 +14,4 @@ class CreateContactComponent extends React.Component {
     }
 }
 
-
 export default CreateContactComponent;

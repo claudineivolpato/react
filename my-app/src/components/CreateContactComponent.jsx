@@ -3,6 +3,13 @@ import React from "react";
 class CreateContactComponent extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            //id: this.props.match.params.id,
+            id: '',
+            codigo: '',
+            nome: '',
+            telefone: ''
+        }
 
         this.contactList = this.contactList.bind(this);
     }

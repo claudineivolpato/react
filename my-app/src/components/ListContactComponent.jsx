@@ -41,8 +41,8 @@ class ListContactComponent extends React.Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.contacts.map(contact =>
-                                    <tr key={contact.id}>
+                                this.state.contacts.map((contact, index) =>
+                                    <tr key={index}>
                                         <td>{contact.codigo}</td>
                                         <td>{contact.nome}</td>
                                         <td>{contact.telefone}</td>

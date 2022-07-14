@@ -13,7 +13,7 @@ function App() {
         <div className='container'>
           <Switch>
             <Route path="/" exact component={ListContactComponent}></Route>
-            <Route path="/contact" component={CreateContactComponent}></Route>
+            <Route path="/add-contact" component={CreateContactComponent}></Route>
           </Switch>
         </div>
         <FooterComponent />

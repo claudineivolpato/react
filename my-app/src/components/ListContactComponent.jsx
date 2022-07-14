@@ -7,19 +7,28 @@ class ListContactComponent extends React.Component {
         this.state = {
             contacts: []
         }
+
+        this.addContact = this.addContact.bind(this);
     }
 
     componentDidMount() {
         ContactService.getContacts().then(res => {
             this.setState({ contacts: res.data })
-            //console.log(res.data)
         })
+    }
+
+    addContact(){
+        this.props.history.push('/add-contact')
     }
 
     render() {
         return (
             <div>
                 <h2 className="text-center">Lista de Contatos</h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addContact}>Novo Contato</button>
+                </div>
+                <hr />
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>

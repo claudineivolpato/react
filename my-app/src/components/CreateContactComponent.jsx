@@ -1,4 +1,5 @@
 import React from "react";
+import ContactService from "../services/ContactService";
 
 class CreateContactComponent extends React.Component {
     constructor(props) {
@@ -12,10 +13,38 @@ class CreateContactComponent extends React.Component {
         }
 
         this.contactList = this.contactList.bind(this);
+        this.saveContact = this.saveContact.bind(this);
     }
 
-    contactList(){
+    contactList() {
         this.props.history.push('/')
+    }
+
+    changeCodigo = (event) => {
+        this.setState({ codigo: event.target.value })
+    }
+
+    changeNome = (event) => {
+        this.setState({ nome: event.target.value })
+    }
+
+    changeTelefone = (event) => {
+        this.setState({ telefone: event.target.value })
+    }
+
+    saveContact = (e) => {
+        e.preventDefault();
+        let contato = {
+            codigo : this.state.codigo,
+            nome : this.state.nome,
+            telefone : this.state.codigo
+        }
+        ContactService.createContact(contato).then(res =>{
+            alert(res.data)
+            this.setState({ codigo: '' })
+            this.setState({ nome: '' })
+            this.setState({ telefone: '' })
+        })
     }
 
     render() {
@@ -28,18 +57,21 @@ class CreateContactComponent extends React.Component {
                             <form>
                                 <div className="form-group">
                                     <label>Código</label>
-                                    <input placeholder="Código" name="codigo" required className="form-control"></input>
+                                    <input placeholder="Código" name="codigo" required className="form-control"
+                                        value={this.state.codigo} onChange={this.changeCodigo}></input>
                                 </div>
                                 <div className="form-group">
                                     <label>Nome</label>
-                                    <input placeholder="Nome" name="nome" required className="form-control"></input>
+                                    <input placeholder="Nome" name="nome" required className="form-control"
+                                        value={this.state.nome} onChange={this.changeNome}></input>
                                 </div>
                                 <div className="form-group">
                                     <label>Telefone</label>
-                                    <input placeholder="Telefone" name="telefone" required className="form-control"></input>
+                                    <input placeholder="Telefone" name="telefone" required className="form-control"
+                                        value={this.state.telefone} onChange={this.changeTelefone}></input>
                                 </div>
 
-                                <button className="btn btn-success">Salvar</button>
+                                <button className="btn btn-success" onClick={this.saveContact}>Salvar</button>
                                 <button className="btn btn-secondary" onClick={this.contactList}>Cancelar</button>
 
                             </form>

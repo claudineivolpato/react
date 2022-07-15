@@ -51,7 +51,7 @@ class ListContactComponent extends React.Component {
                                         <td>{contact.nome}</td>
                                         <td>{contact.telefone}</td>
                                         <td>
-                                            <button className="btn btn-danger" onClick={this.deleteContact(contact.codigo)}>Excluir</button>
+                                            <button className="btn btn-danger" onClick={() => this.deleteContact(contact.codigo)}>Excluir</button>
                                         </td>
                                     </tr>
                                 )

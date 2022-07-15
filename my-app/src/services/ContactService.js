@@ -7,12 +7,25 @@ class ContactService {
         return axios.get(BASE_URL);
     }
 
+    async getContactByCodigo(codigo) {
+        let URL = BASE_URL + '/' + codigo
+
+        let contact = ''
+
+        try {
+            contact = await (await axios.get(URL)).data; // await para a execução e espera terminar o processamento
+        } catch (error) {
+            console.log(error)
+        }
+        return contact;
+    }
+
     createContact(contato) {
         return axios.post(BASE_URL, contato);
     }
 
     deleteContact(codigo) {
-        let URL  = BASE_URL + '/' + codigo
+        let URL = BASE_URL + '/' + codigo
         return axios.delete(URL);
     }
 }

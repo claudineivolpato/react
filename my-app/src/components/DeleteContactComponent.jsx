@@ -7,7 +7,7 @@ class DeleteContactComponent extends React.Component {
         this.state ={
             codigo: this.props.match.params.codigo
         }
-
+        this.contactList = this.contactList.bind(this);
         this.deleteContact = this.deleteContact.bind(this);
     }
 
@@ -15,7 +15,13 @@ class DeleteContactComponent extends React.Component {
         this.props.history.push('/')
     }
 
-    deleteContact(e) {
+    async componentDidMount(){
+        let contact = await ContactService.getContactByCodigo(this.state.codigo)
+        this.setState({nome : contact.nome})
+        this.setState({telefone : contact.telefone})
+    }
+
+    deleteContact = async(e) => {
         e.preventDefault()
         ContactService.deleteContact(this.state.codigo).then(res =>{
             alert(res.data)
@@ -31,7 +37,7 @@ class DeleteContactComponent extends React.Component {
                         <div className="card-body">
                             <form>
                                 <div className="form-group">
-                                    <label>Código</label>
+                                    <label>Deseja excluir o contato?</label>
                                     <div>{this.state.codigo}</div>
                                 </div>
                                 <div className="form-group">

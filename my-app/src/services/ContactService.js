@@ -30,8 +30,8 @@ class ContactService {
     }
 
     udpateContact(contact) {
-        let URL = BASE_URL + '/' + contact.codigo
-        return axios.put(URL);
+        let URL = BASE_URL + '/' + contact.codigo;
+        return axios.put(URL, contact)
     }
 }
 

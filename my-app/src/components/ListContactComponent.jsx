@@ -25,6 +25,10 @@ class ListContactComponent extends React.Component {
         this.props.history.push(`/delete-contact/${codigo}`)
     }
 
+    updateContact(codigo) {
+        this.props.history.push(`/update-contact/${codigo}`)
+    }
+
     render() {
         return (
             <div>
@@ -52,6 +56,7 @@ class ListContactComponent extends React.Component {
                                         <td>{contact.telefone}</td>
                                         <td>
                                             <button className="btn btn-danger" onClick={() => this.deleteContact(contact.codigo)}>Excluir</button>
+                                            <button className="btn btn-info" onClick={() => this.updateContact(contact.codigo)}>Alterar</button>
                                         </td>
                                     </tr>
                                 )

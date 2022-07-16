@@ -28,6 +28,11 @@ class ContactService {
         let URL = BASE_URL + '/' + codigo
         return axios.delete(URL);
     }
+
+    udpateContact(contact) {
+        let URL = BASE_URL + '/' + contact.codigo
+        return axios.put(URL);
+    }
 }
 
 export default new ContactService()

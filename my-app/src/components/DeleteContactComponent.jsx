@@ -4,7 +4,7 @@ import ContactService from "../services/ContactService";
 class DeleteContactComponent extends React.Component {
     constructor(props) {
         super(props)
-        this.state ={
+        this.state = {
             codigo: this.props.match.params.codigo
         }
         this.contactList = this.contactList.bind(this);
@@ -15,17 +15,21 @@ class DeleteContactComponent extends React.Component {
         this.props.history.push('/')
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         let contact = await ContactService.getContactByCodigo(this.state.codigo)
-        this.setState({nome : contact.nome})
-        this.setState({telefone : contact.telefone})
+        this.setState({ nome: contact.nome })
+        this.setState({ telefone: contact.telefone })
     }
 
-    deleteContact = async(e) => {
-        e.preventDefault()
-        ContactService.deleteContact(this.state.codigo).then(res =>{
+    deleteContact = async (e) => {
+        e.preventDefault();
+        try {
+            let res = await ContactService.deleteContact(this.state.codigo)
             alert(res.data)
-        })
+        } catch (error) {
+            console.log(error)
+        }
+        this.contactList()
     }
 
     render() {

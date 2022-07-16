@@ -32,19 +32,17 @@ class CreateContactComponent extends React.Component {
         this.setState({ telefone: event.target.value })
     }
 
-    saveContact = (e) => {
+    saveContact = async (e) => {
         e.preventDefault();
+
         let contato = {
-            codigo : this.state.codigo,
-            nome : this.state.nome,
-            telefone : this.state.codigo
+            codigo: this.state.codigo,
+            nome: this.state.nome,
+            telefone: this.state.telefone
         }
-        ContactService.createContact(contato).then(res =>{
-            alert(res.data)
-            this.setState({ codigo: '' })
-            this.setState({ nome: '' })
-            this.setState({ telefone: '' })
-        })
+        let res = await (await ContactService.createContact(contato)).data
+        alert(res)
+        this.contactList()
     }
 
     render() {

@@ -39,7 +39,8 @@ class UpdateContactComponent extends React.Component {
             nome: this.state.nome,
             telefone: this.state.telefone
         }
-        let res = await (await ContactService.updateContact(contato)).data
+        
+        let res = await (await ContactService.udpateContact(contato)).data
         alert(res)
         this.contactList()
     }
@@ -54,7 +55,7 @@ class UpdateContactComponent extends React.Component {
                             <form>
                                 <div className="form-group">
                                     <label>Código</label>
-                                    <div>{this.changeCodigo}</div>
+                                    <div>{this.state.codigo}</div>
                                 </div>
                                 <div className="form-group">
                                     <label>Nome</label>

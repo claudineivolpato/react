@@ -56,7 +56,7 @@ class ListContactComponent extends React.Component {
                                         <td>{contact.telefone}</td>
                                         <td>
                                             <button className="btn btn-danger" onClick={() => this.deleteContact(contact.codigo)}>Excluir</button>
-                                            <button className="btn btn-info" onClick={() => this.updateContact(contact.codigo)}>Alterar</button>
+                                            <button style={{marginLeft: "10px"}} className="btn btn-info" onClick={() => this.updateContact(contact.codigo)}>Alterar</button>
                                         </td>
                                     </tr>
                                 )

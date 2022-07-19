@@ -6,6 +6,7 @@ import ListContactComponent from './components/ListContactComponent';
 import CreateContactComponent from './components/CreateContactComponent';
 import DeleteContactComponent from './components/DeleteContactComponent';
 import UpdateContactComponent from './components/UpdateContactComponent';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <HeaderComponent />
         <div className='container'>
           <Switch>
-            <Route path="/" exact component={ListContactComponent}></Route>
+            <Route path="/" exact component={Login}></Route>
             <Route path="/add-contact" component={CreateContactComponent}></Route>
             <Route path="/delete-contact/:codigo" component={DeleteContactComponent}></Route>
             <Route path="/update-contact/:codigo" component={UpdateContactComponent}></Route>

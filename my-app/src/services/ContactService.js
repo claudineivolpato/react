@@ -1,19 +1,33 @@
 import axios from 'axios'
+import AuthServices from './AuthServices';
 
-const BASE_URL = "https://appelaborata.herokuapp.com/cont"
+const BASE_URL = "https://appelaborata.herokuapp.com/contatos"
 
 class ContactService {
     getContacts() {
-        return axios.get(BASE_URL);
+
+        let config = {
+            headers: {
+                auth: AuthServices.getLoggedUser()
+            }
+        }
+
+        return axios.get(BASE_URL, config);
     }
 
     async getContactByCodigo(codigo) {
+
+        let config = {
+            headers: {
+                auth: AuthServices.getLoggedUser()
+            }
+        }
         let URL = BASE_URL + '/' + codigo
 
         let contact = ''
 
         try {
-            contact = await (await axios.get(URL)).data; // await para a execução e espera terminar o processamento
+            contact = await (await axios.get(URL,config)).data; // await para a execução e espera terminar o processamento
         } catch (error) {
             console.log(error)
         }

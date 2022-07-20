@@ -5,19 +5,22 @@ class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            usuario: '',
+            login: '',
             senha: ''
         }
     }
 
-    sendLogin = (event) => {
+    sendLogin = async (event) => {
         event.preventDefault();
         let credenciais = {
-            usuario: this.state.usuario,
+            login: this.state.login,
             senha: this.state.senha
         }
 
-        AuthServices.login(credenciais)
+        let res = await AuthServices.login(credenciais)
+            AuthServices.setLoggedUser(res.data)
+
+            this.props.history.push('/contacts')
     }
 
     render() {
@@ -27,13 +30,13 @@ class Login extends React.Component {
                     <div className="card-body">
                         <form onSubmit={this.sendLogin}>
                             <div className="form-group">
-                                <label htmlFor="txtusuario">Usuário</label>
+                                <label htmlFor="txtusuario">Login</label>
                                 <input id="txtusuario"
                                     type="text"
                                     className="form-control"
-                                    placeholder="Usuário"
-                                    value={this.state.usuario}
-                                    onChange={e => this.setState({ usuario: e.target.value })}
+                                    placeholder="Login"
+                                    value={this.state.login}
+                                    onChange={e => this.setState({ login: e.target.value })}
                                 >
                                 </input>
                             </div>

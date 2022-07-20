@@ -16,6 +16,7 @@ function App() {
         <div className='container'>
           <Switch>
             <Route path="/" exact component={Login}></Route>
+            <Route path="/contacts" component={ListContactComponent}></Route>
             <Route path="/add-contact" component={CreateContactComponent}></Route>
             <Route path="/delete-contact/:codigo" component={DeleteContactComponent}></Route>
             <Route path="/update-contact/:codigo" component={UpdateContactComponent}></Route>

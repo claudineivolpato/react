@@ -1,11 +1,11 @@
-import axios from 'axios'
-
-const BASE_URL = "https://appelaborata.herokuapp.com/usuarios/login"
+import api from './ApiInterceptor';
+//import axios from 'axios';
 
 class AuthServices {
 
     login(credenciais) {
-        return axios.post(BASE_URL, credenciais)
+        //return axios.post('https://appelaborata.herokuapp.com/usuarios/login',credenciais)
+        return api.post('usuarios/login',credenciais)
     }
 
     setLoggedUser(token_user) {

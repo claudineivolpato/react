@@ -16,11 +16,10 @@ function App() {
 
   useEffect(() => {
     let token_user = AuthServices.getLoggedUser()
-    if (token_user) {
+    if (token_user)
       setAuth(true)
-    } else {
+    else
       setAuth(false)
-    }
   })
 
   return (

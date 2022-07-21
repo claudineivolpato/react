@@ -1,10 +1,11 @@
 import axios from 'axios'
 import AuthServices from './AuthServices';
+import apiConfig from '../config.json'
 
 const instance = axios.create({
-    baseURL: "https://appelaborata.herokuapp.com",
+    baseURL: apiConfig.SERVER_URL,
     headers: {
-        "Content-Type": "application-JSON"
+        "Content-Type": "application/json"
     }
 });
 
@@ -14,10 +15,9 @@ instance.interceptors.request.use((config) => {
         config.headers["auth"] = token
     }
     return config;
-},(error) =>{
+}, (error) => {
     return Promise.reject(error);
 }
 );
-
 
 export default instance;

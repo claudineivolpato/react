@@ -1,5 +1,3 @@
-import axios from 'axios'
-import AuthServices from './AuthServices';
 import api from './ApiInterceptor';
 
 class ContactService {
@@ -13,9 +11,7 @@ class ContactService {
     }
 
     async getContactByCodigo(codigo) {
-
         let contact = ''
-
         try {
             contact = await (await api.get('contatos/' + codigo)).data; // await para a execução e espera terminar o processamento
         } catch (error) {
@@ -25,7 +21,7 @@ class ContactService {
     }
 
     createContact(contato) {
-        return api.post('contatos');
+        return api.post('contatos', contato);
     }
 
     deleteContact(codigo) {
@@ -33,7 +29,7 @@ class ContactService {
     }
 
     udpateContact(contact) {
-        return api.put('contatos/' + contact.codigo)
+        return api.put('contatos/' + contact.codigo, contact)
     }
 }
 

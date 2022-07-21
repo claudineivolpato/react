@@ -12,6 +12,7 @@ class Login extends React.Component {
 
     sendLogin = async (event) => {
         event.preventDefault();
+        
         let credenciais = {
             login: this.state.login,
             senha: this.state.senha

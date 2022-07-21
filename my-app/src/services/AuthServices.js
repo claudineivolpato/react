@@ -5,7 +5,7 @@ const BASE_URL = "https://appelaborata.herokuapp.com/usuarios/login"
 class AuthServices {
 
     login(credenciais) {
-        axios.post(BASE_URL, credenciais)
+        return axios.post(BASE_URL, credenciais)
     }
 
     setLoggedUser(token_user) {

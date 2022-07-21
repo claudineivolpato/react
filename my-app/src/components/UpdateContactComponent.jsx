@@ -14,8 +14,13 @@ class UpdateContactComponent extends React.Component {
         this.updateContact = this.updateContact.bind(this);
     }
 
+    async componentDidMount() {
+        let contact = await ContactService.getContactByCodigo(this.state.codigo)
+        this.setState({ nome: contact.nome, telefone: contact.telefone })
+    }
+
     contactList() {
-        this.props.history.push('/')
+        this.props.history.push('/contacts')
     }
 
     changeNome = (event) => {
@@ -24,11 +29,6 @@ class UpdateContactComponent extends React.Component {
 
     changeTelefone = (event) => {
         this.setState({ telefone: event.target.value })
-    }
-
-    async componentDidMount() {
-        let contact = await ContactService.getContactByCodigo(this.state.codigo)
-        this.setState({ nome: contact.nome, telefone: contact.telefone })
     }
 
     updateContact = async (e) => {

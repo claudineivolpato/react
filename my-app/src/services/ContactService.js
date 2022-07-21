@@ -1,33 +1,23 @@
 import axios from 'axios'
 import AuthServices from './AuthServices';
-
-const BASE_URL = "https://appelaborata.herokuapp.com/contatos"
+import api from './ApiInterceptor';
 
 class ContactService {
-    getContacts() {
+    async getContacts() {
+        try {
+            return await api.get('/contatos');
 
-        let config = {
-            headers: {
-                auth: AuthServices.getLoggedUser()
-            }
+        } catch (err) {
+            return err.response.status
         }
-
-        return axios.get(BASE_URL, config);
     }
 
     async getContactByCodigo(codigo) {
 
-        let config = {
-            headers: {
-                auth: AuthServices.getLoggedUser()
-            }
-        }
-        let URL = BASE_URL + '/' + codigo
-
         let contact = ''
 
         try {
-            contact = await (await axios.get(URL,config)).data; // await para a execução e espera terminar o processamento
+            contact = await (await api.get('contatos/' + codigo)).data; // await para a execução e espera terminar o processamento
         } catch (error) {
             console.log(error)
         }
@@ -35,17 +25,15 @@ class ContactService {
     }
 
     createContact(contato) {
-        return axios.post(BASE_URL, contato);
+        return api.post('contatos');
     }
 
     deleteContact(codigo) {
-        let URL = BASE_URL + '/' + codigo
-        return axios.delete(URL);
+        return api.delete('contatos/' + codigo);
     }
 
     udpateContact(contact) {
-        let URL = BASE_URL + '/' + contact.codigo;
-        return axios.put(URL, contact)
+        return api.put('contatos/' + contact.codigo)
     }
 }
 

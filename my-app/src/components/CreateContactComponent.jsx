@@ -17,7 +17,7 @@ class CreateContactComponent extends React.Component {
     }
 
     contactList() {
-        this.props.history.push('/')
+        this.props.history.push('/contacts')
     }
 
     changeCodigo = (event) => {

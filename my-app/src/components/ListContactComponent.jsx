@@ -11,10 +11,15 @@ class ListContactComponent extends React.Component {
         this.addContact = this.addContact.bind(this);
     }
 
-    componentDidMount() {
-        ContactService.getContacts().then(res => {
+    async componentDidMount() {
+        let res = await ContactService.getContacts();
+
+        if (res == 403) {
+            this.props.history.push('/')
+        }
+        else {
             this.setState({ contacts: res.data })
-        })
+        }
     }
 
     addContact() {

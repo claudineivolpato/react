@@ -12,7 +12,7 @@ class DeleteContactComponent extends React.Component {
     }
 
     contactList() {
-        this.props.history.push('/')
+        this.props.history.push('/contacts')
     }
 
     async componentDidMount() {

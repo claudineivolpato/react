@@ -9,6 +9,7 @@ import UpdateContactComponent from './components/UpdateContactComponent';
 import Login from './components/Login';
 import { useEffect, useState } from 'react';
 import AuthServices from './services/AuthServices';
+import CreateContactFormHook from './components/CreateContactFormHook';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
             <Route path="/" exact component={Login}></Route>
             <Route path="/contacts" component={ListContactComponent}></Route>
             <Route path="/add-contact" >
-              {auth ? <CreateContactComponent /> : <Login />}
+              {auth ? <CreateContactFormHook /> : <Login />}
             </Route>
             <Route path="/delete-contact/:codigo" component={DeleteContactComponent}></Route>
             <Route path="/update-contact/:codigo" component={UpdateContactComponent}></Route>

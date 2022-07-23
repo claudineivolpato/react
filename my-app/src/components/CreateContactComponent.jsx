@@ -42,7 +42,7 @@ class CreateContactComponent extends React.Component {
         }
         let res = await (await ContactService.createContact(contato)).data
         alert(res)
-        this.contactList()
+        this.props.history.push('/contacts')
     }
 
     render() {

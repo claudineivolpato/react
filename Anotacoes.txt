@@ -39,3 +39,9 @@ $ npm i react-router-dom
 https://github.com/valdairelaborata/12760/tree/crud_04/my-app/src/components
 https://pt-br.reactjs.org/docs/hooks-intro.html
 
+
+######################  22/07 ############################
+
+react-hook-form    ----- instalar
+https://react-hook-form.com/
+https://www.npmjs.com/package/react-hook-form
